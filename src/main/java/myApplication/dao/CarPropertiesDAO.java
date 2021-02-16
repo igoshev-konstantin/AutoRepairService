@@ -19,4 +19,6 @@ public interface CarPropertiesDAO {
     public Car getCarById(int id);
 
     public void saveCar(Car car);
+
+    public void deleteCarById(int id);
 }

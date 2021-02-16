@@ -21,10 +21,6 @@ public class Car {
 
     @Column(name = "modelName")
     private String modelName;
-    @Column(name = "engineName")
-    private String engineName;
-    @Column(name = "engineCapacity")
-    private int engineCapacity;
     @Column(name = "turboCharged")
     private boolean turboCharged;
 
@@ -58,22 +54,6 @@ public class Car {
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
-    }
-
-    public String getEngineName() {
-        return engineName;
-    }
-
-    public void setEngineName(String engineName) {
-        this.engineName = engineName;
-    }
-
-    public int getEngineCapacity() {
-        return engineCapacity;
-    }
-
-    public void setEngineCapacity(int engineCapacity) {
-        this.engineCapacity = engineCapacity;
     }
 
     public boolean isTurboCharged() {

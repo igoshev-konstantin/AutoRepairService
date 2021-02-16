@@ -51,4 +51,12 @@ public class CarPropertiesDAOImpl implements CarPropertiesDAO {
         Session session = sessionFactory.getCurrentSession();
         session.save(car);
     }
+
+    @Override
+    public void deleteCarById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Car> query = session.createQuery("delete Car where id = :carId");
+        query.setParameter("carId", id);
+        query.executeUpdate();
+    }
 }

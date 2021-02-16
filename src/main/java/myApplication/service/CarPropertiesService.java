@@ -17,4 +17,6 @@ public interface CarPropertiesService {
     public Car getCarById(int id);
 
     public void saveCar(Car car);
+
+    public void deleteCarById(int id);
 }

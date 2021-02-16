@@ -78,6 +78,7 @@
 
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <!--    Spring конвертирует в JSON и в обратную сторону-->
+        <!--    Spring конвертирует ответ в JSON сразу-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

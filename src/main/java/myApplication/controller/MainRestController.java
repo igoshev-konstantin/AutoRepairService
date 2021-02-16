@@ -40,36 +40,38 @@ public class MainRestController {
     public Car getEmployeeById(@PathVariable("id") int id) {
         Car car = carPropertiesService.getCarById(id);
         if (car == null) {
-            throw new NoSuchCarException("there is no employee with id: " + id);
+            throw new NoSuchCarException("there is no car with id: " + id);
         }
         return car;
     }
 
-//    @PostMapping("/employees")      Добавляем сотрудника. Данные отправляем в формате JSON
-//    jaxon конвертирует это из JSON в объект Employee. Затем записывает в БД нового сотрудника и присваевает
-//    сотруднику id.
-//    public Employee addNewEmployeeByPOST(@RequestBody Employee employee) {
-//        employeeService.saveEmployee(employee);
-//        return employee;
-//    }
-//
-//    @PutMapping("/employees")           PutMapping обновляет данные по сотруднику
-//    public Employee updateEmployee(@RequestBody Employee employee) {
-//        employeeService.saveEmployee(employee);
-//        return employee;
-//    }
-//
-//    @DeleteMapping("/employee/{id}")
-//    public String deleteEmployee(@PathVariable("id") int id) {
-//
-//        Employee employee = employeeService.getEmployee(id);
-//        if (employee == null) {
-//            throw new NoSuchEmployeeException("there is no employee with id: " + id);
-//        }else{
-//            employeeService.deleteEmployee(id);
-//        }
-//
-//        return "Employee with id: " + id + " id - was deleted";
-//    }
+
+    @PostMapping("/cars")      /*Добавляем Car. Данные отправляем в формате JSON,
+    jaxon конвертирует это из JSON в объект Car. Затем записывает в БД новую car и присваевает
+    car id.*/
+    public Car addNewEmployeeByPOST(@RequestBody Car car) {
+        carPropertiesService.saveCar(car);
+        return car;
+    }
+
+    @PutMapping("/cars")          /* PutMapping обновляет данные по car*/
+    public Car updateEmployee(@RequestBody Car car) {
+        carPropertiesService.saveCar(car);
+        return car;
+    }
+
+
+    @DeleteMapping("/cars/{id}")
+    public String deleteEmployee(@PathVariable("id") int id) {
+
+        Car car = carPropertiesService.getCarById(id);
+        if (car == null) {
+            throw new NoSuchCarException("there is no car with id: " + id);
+        }else{
+            carPropertiesService.deleteCarById(id);
+        }
+
+        return "car with id: " + id + " id - was deleted";
+    }
 
 }
