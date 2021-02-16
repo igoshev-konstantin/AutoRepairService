@@ -14,5 +14,9 @@ public interface CarPropertiesDAO {
 
     public List<CarColor> getAllCarColors();
 
+    public List<Car> getAllCars();
+
+    public Car getCarById(int id);
+
     public void saveCar(Car car);
 }

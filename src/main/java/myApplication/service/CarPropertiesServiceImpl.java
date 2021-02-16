@@ -30,6 +30,16 @@ public class CarPropertiesServiceImpl implements CarPropertiesService {
     }
 
     @Override
+    public Car getCarById(int id) {
+        return carPropertiesDAO.getCarById(id);
+    }
+
+    @Override
+    public List<Car> getAllCars() {
+        return carPropertiesDAO.getAllCars();
+    }
+
+    @Override
     @Transactional
     public void saveCar(Car car) {
         carPropertiesDAO.saveCar(car);

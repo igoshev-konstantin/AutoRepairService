@@ -33,6 +33,20 @@ public class CarPropertiesDAOImpl implements CarPropertiesDAO {
     }
 
     @Override
+    public List<Car> getAllCars() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Car> query = session.createQuery("from Car", Car.class);
+        return query.getResultList();
+    }
+
+    @Override
+    public Car getCarById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Car car = session.get(Car.class, id);
+        return car;
+    }
+
+    @Override
     public void saveCar(Car car) {
         Session session = sessionFactory.getCurrentSession();
         session.save(car);
